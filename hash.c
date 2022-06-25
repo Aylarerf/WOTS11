@@ -29,14 +29,7 @@ static int core_hash(const wots_params *params,
     unsigned char buf[64];
 
     
-    
-    if (params->n == 32 && params->func == XMSS_SHA2) {
-        SHA256(in, inlen, out);
-    }
-    else if (params->n == 32 && params->func == XMSS_SHAKE128) {
-        shake128(out, 32, in, inlen);
-    }
-    else if (params->n == 32 && params->func == XMSS_SHAKE256) {
+    if (params->n == 32 && params->func == XMSS_SHAKE256) {
         shake256(out, 32, in, inlen);
     }
    
