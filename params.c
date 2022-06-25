@@ -19,6 +19,7 @@ int wots_initialize_params(wots_params *params)
 
             params->n = 32;
             params->padding_len = 32;
+            params->func = XMSS_SHAKE256;
           
     if (params->wots_w == 4) {
         params->wots_log_w = 2;
